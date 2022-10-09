@@ -19,8 +19,8 @@ const createNewUser = (user) => {
 }
 
 const findPlayerAndAttack = (userId, damage) => {
-  const userIndex= usersList.findIndex(item => item.id === userId); 
-  if (userIndex.length < 1 ) {return {success: false, message: 'Player not found',}}
+  const userIndex = usersList.findIndex(item => item.id === userId); 
+  if (userIndex < 0) {return {success: false, message: 'Player not found',}}
 
   let playerHp = usersList[userIndex].userDefence.userHp;
   playerHp = playerHp - damage;
